@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kuba.exercise_02">
 
-    <uses-permission android:name="com.example.kuba_permissions.ADD_ITEM" />
+    <uses-permission android:name="com.example.kuba.permission.NOTIFY_ITEM_ADDED" />
 
     <application
         android:allowBackup="true"
@@ -20,9 +20,10 @@
         </activity>
         <receiver
             android:name="AddItemBroadcastReceiver"
-            android:permission="com.example.kuba_permissions.ADD_ITEM">
+            android:permission="com.example.kuba.permission.NOTIFY_ITEM_ADDED"
+            android:process=":remote">
             <intent-filter>
-                <action android:name="com.example.kuba.ITEM_ADDED" />
+                <action android:name="com.example.kuba.intent.action.ITEM_ADDED" />
             </intent-filter>
         </receiver>
     </application>
